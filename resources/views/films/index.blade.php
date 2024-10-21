@@ -16,22 +16,24 @@
             <th class="py-3 px-6 text-left">ID</th>
             <th class="py-3 px-6 text-left">Title</th>
             <th class="py-3 px-6 text-left">Director</th>
-            <th class="py-3 px-6 text-left">Year</th>
+            <th class="py-3 px-6 text-left">Release date</th>
+            <th class="py-3 px-6 text-left">Rating</th>
             <th class="py-3 px-6 text-center">Actions</th>
         </tr>
         </thead>
         <tbody class="text-gray-600 text-sm font-light">
         <?php if (empty($films)): ?>
         <tr>
-            <td colspan="5" class="py-3 px-6 text-center">No hi ha pelis disponibles.</td>
+            <td colspan="7" class="py-3 px-6 text-center">No hi ha pelis disponibles.</td>
         </tr>
         <?php else: ?>
             <?php foreach ($films as $film): ?>
         <tr class="border-b border-gray-200 hover:bg-gray-100">
             <td class="py-3 px-6"><?=$film['id'] ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($film['name']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($film['title']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['director']) ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($film['year']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($film['release_date']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars(number_format($film['rating'], 1)) ?></td>
             <td class="py-3 px-6 text-center">
                 <a href="/edit/<?= $film['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
                 <a href="/delete/<?= $film['id'] ?>" class="text-red-500 hover:text-red-700 ">Delete</a>

@@ -30,10 +30,11 @@ class Film
     public static function create($data)
     {
         $db = App::get('database')->getConnection();
-        $statement = $db->prepare('INSERT INTO '. static::$table . "(name, director, year) VALUES (:name, :director, :year)");
-        $statement->bindValue(':name', $data['name']);
+        $statement = $db->prepare('INSERT INTO '. static::$table . "(title, director, release_date, rating) VALUES (:title, :director, :release_date, :rating)");
+        $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':director', $data['director']);
-        $statement->bindValue(':year', $data['year']);
+        $statement->bindValue(':release_date', $data['release_date']);
+        $statement->bindValue(':rating', $data['rating']);
         $statement->execute();
     }
 

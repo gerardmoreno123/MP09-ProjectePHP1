@@ -11,8 +11,8 @@
     <h1 class="text-2xl font-bold mb-4">Add New Film</h1>
     <form action="/store" method="POST">
         <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700">Title:</label>
-            <input type="text" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter film title">
+            <label for="title" class="block text-sm font-medium text-gray-700">Title:</label>
+            <input type="text" name="title" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter film title">
         </div>
 
         <div class="mb-4">
@@ -21,8 +21,13 @@
         </div>
 
         <div class="mb-4">
-            <label for="year" class="block text-sm font-medium text-gray-700">Release Year:</label>
-            <input type="number" name="year" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter release year">
+            <label for="release_date" class="block text-sm font-medium text-gray-700">Release Date:</label>
+            <input type="date" name="release_date" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter release year">
+        </div>
+
+        <div class="mb-4">
+            <label for="rating" class="block text-sm font-medium text-gray-700">Rating</label>
+            <input type="number" name="rating" step="0.1" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter rating">
         </div>
 
         <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add Film</button>
