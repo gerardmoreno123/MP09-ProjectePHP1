@@ -9,7 +9,7 @@
 <body class="bg-gray-100 p-8">
 <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
     <h1 class="text-3xl font-bold mb-4">Films</h1>
-    <a href="/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Film</a>
+    <a href="films/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Film</a>
     <table class="min-w-full mt-4 bg-white border border-gray-300">
         <thead>
         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -29,14 +29,14 @@
         <?php else: ?>
             <?php foreach ($films as $film): ?>
         <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-3 px-6"><?=$film['id'] ?></td>
+            <td class="py-3 px-6"><?=$film['ID'] ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['title']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['director']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['release_date']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars(number_format($film['rating'], 1)) ?></td>
             <td class="py-3 px-6 text-center">
-                <a href="/edit/<?= $film['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
-                <a href="/delete/<?= $film['id'] ?>" class="text-red-500 hover:text-red-700 ">Delete</a>
+                <a href="films/edit/<?= $film['ID'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
+                <a href="films/delete/<?= $film['ID'] ?>" class="text-red-500 hover:text-red-700 ">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

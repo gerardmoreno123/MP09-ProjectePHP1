@@ -9,7 +9,7 @@
 <body class="bg-gray-100 p-8">
 <div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
     <h1 class="text-2xl font-bold mb-4">Add New Film</h1>
-    <form action="/store" method="POST">
+    <form action="/films/store" method="POST">
         <div class="mb-4">
             <label for="title" class="block text-sm font-medium text-gray-700">Title:</label>
             <input type="text" name="title" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter film title">

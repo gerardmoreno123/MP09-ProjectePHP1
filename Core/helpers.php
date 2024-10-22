@@ -11,6 +11,6 @@ function view($view, $data = [])
 {
     //extraem les dades del array
     extract($data);
-    //retornarem la vista
+    $view = str_replace('.', '/', $view);
     return require "../resources/views/{$view}.blade.php";
 }

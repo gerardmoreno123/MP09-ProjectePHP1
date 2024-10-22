@@ -42,11 +42,12 @@ class Film
     public static function update($id, $data)
     {
         $db = App::get('database')->getConnection();
-        $statement = $db->prepare("UPDATE ". static::$table . " SET name = :name, director = :director, year = :year WHERE id = :id");
+        $statement = $db->prepare("UPDATE " . static::$table . " SET title = :title, director = :director, release_date = :release_date, rating = :rating WHERE id = :id");
         $statement->bindValue(':id', $id);
-        $statement->bindValue(':name', $data['name']);
+        $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':director', $data['director']);
-        $statement->bindValue(':year', $data['year']);
+        $statement->bindValue(':release_date', $data['release_date']);
+        $statement->bindValue(':rating', $data['rating']);
         $statement->execute();
     }
 

@@ -9,19 +9,23 @@
 <body class="bg-gray-100 p-8">
     <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 class="text-3xl font-bold mb-4">Edit Film</h1>
-        <form action="/update" method="POST">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($film->id) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+        <form action="/films/update" method="POST">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($film->ID) ?>">
             <div class="mb-4">
-                <label for="name" class="block text-gray-700">Name:</label>
-                <input type="text" name="name" value="<?= htmlspecialchars($film->name) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <label for="name" class="block text-gray-700">Title:</label>
+                <input type="text" name="title" value="<?= htmlspecialchars($film->title) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <div class="mb-4">
                 <label for="director" class="block text-gray-700">Director:</label>
                 <input type="text" name="director" value="<?= htmlspecialchars($film->director) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <div class="mb-4">
-                <label for="year" class="block text-gray-700">Year:</label>
-                <input type="number" name="year" value="<?= htmlspecialchars($film->year) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <label for="year" class="block text-gray-700">Release date:</label>
+                <input type="date" name="release_date" value="<?= htmlspecialchars($film->release_date) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="rating" class="block text-gray-700">Rating:</label>
+                <input type="number" name="rating" step="0.1" value="<?= htmlspecialchars($film->rating) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Edit</button>
         </form>

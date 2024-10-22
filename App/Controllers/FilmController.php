@@ -28,16 +28,16 @@ class FilmController
         //cridem funcio create del model
         Film::create($data);
         //retornar a la vista principal
-        header('location: /');
+        header('location: /films');
         exit;
     }
 
-   //funcio per a la vista edit
+    //funcio per a la vista edit
     public function edit($id)
     {
         //si no ens passen la id fem redirect
         if ($id === null) {
-            header('location: /');
+            header('location: /films');
             exit;
         }
 
@@ -47,11 +47,10 @@ class FilmController
         //si no ens passen cap peli mostrar 404
         if (!$film) {
             require '../../resources/views/errors/404.blade.php';
-            return;
         }
 
         //retornem la vista i li passem la peli indicada
-        return view('films/edit', ['film' => $film]);
+        return view('films.edit', ['film' => $film]);
     }
 
     //funcio update per a modificar la peli a la base de dades
@@ -61,7 +60,7 @@ class FilmController
         Film::update($id, $data);
 
         //retonem a la pàgina principal
-        header('location: /');
+        header('location: /films');
         exit;
     }
 
@@ -88,8 +87,32 @@ class FilmController
         Film::delete($id);
 
         //retornar a la vista
-        header('location: /');
+        header('location: /films');
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
