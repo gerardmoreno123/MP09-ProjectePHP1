@@ -1,0 +1,8 @@
+/* Estils personalitzats per al mode fosc */
+body.dark-mode {
+    background-color: #1a1a1a; /* Color de fons fosc */
+    color: #ffffff; /* Color del text clar */
+}
+.dark-mode .bg-white {
+    background-color: #2a2a2a; /* Color de fons per als panells */
+}

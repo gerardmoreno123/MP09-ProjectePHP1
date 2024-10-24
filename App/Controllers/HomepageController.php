@@ -6,7 +6,7 @@ class HomepageController
 {
     public function index()
     {
-        require '../resources/views/homepage.blade.php';
+        require __DIR__ . '/../../resources/views/home.blade.php';
     }
 
 }
