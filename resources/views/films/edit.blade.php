@@ -30,7 +30,7 @@
 
             <div class="mb-4">
                 <label for="release_date" class="block text-gray-900">Data d'estrena:</label>
-                <input type="date" name="release_date" value="<?= htmlspecialchars($film->release_date) ?>" required class="mt-1 block w-full border border-gray-100 text-gray-700 rounded-full p-2 focus:outline-none" style="background-color: rgba(206, 206, 206, 0.6);">
+                <input type="date" name="release_date" max="2099-12-31" value="<?= htmlspecialchars($film->release_date) ?>" required class="mt-1 block w-full border border-gray-100 text-gray-700 rounded-full p-2 focus:outline-none" style="background-color: rgba(206, 206, 206, 0.6);">
             </div>
 
             <div class="mb-4">
