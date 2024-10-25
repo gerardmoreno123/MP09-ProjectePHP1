@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen films-bg">
+<body class="bg-gray-100 flex flex-col min-h-screen games-bg">
 
 <!-- Navegación -->
 <nav class="border-b blurred-section p-4 shadow-md">
@@ -23,16 +23,16 @@
 
 <!-- Contenedor principal -->
 <div class="border max-w-md mx-auto mt-6 blurred-section shadow-md rounded-lg p-6">
-    <h1 class="text-2xl font-bold mb-4 text-gray-900">Add New Film</h1>
-    <form action="/films/store" method="POST">
+    <h1 class="text-2xl font-bold mb-4 text-gray-900">Add New Game</h1>
+    <form action="/games/store" method="POST">
         <div class="mb-4">
             <label for="title" class="block text-gray-900">Title:</label>
-            <input type="text" name="title" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter film title" style="background-color: rgba(206, 206, 206, 0.6);">
+            <input type="text" name="title" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter game title" style="background-color: rgba(206, 206, 206, 0.6);">
         </div>
 
         <div class="mb-4">
-            <label for="director" class="block text-gray-900">Director:</label>
-            <input type="text" name="director" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter director's name" style="background-color: rgba(206, 206, 206, 0.6);">
+            <label for="price" class="block text-gray-900">Price:</label>
+            <input type="number" step="0.01" name="price" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter price" style="background-color: rgba(206, 206, 206, 0.6);">
         </div>
 
         <div class="mb-4">
@@ -41,8 +41,14 @@
         </div>
 
         <div class="mb-4">
-            <label for="rating" class="block text-gray-900">Rating:</label>
-            <input type="number" name="rating" step="0.1" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter rating" style="background-color: rgba(206, 206, 206, 0.6);">
+            <label for="is_multiplayer" class="block text-gray-900">Is multiplayer?</label>
+            <input type="hidden" name="is_multiplayer" value="0">
+            <input type="checkbox" name="is_multiplayer" value="1" class="form-checkbox h-5 w-5 text-gray-600">
+        </div>
+
+        <div class="mb-4">
+            <label for="metacritic" class="block text-gray-900">Metacritic:</label>
+            <input type="number" name="metacritic" step="0.1" required class="mt-1 block w-full border border-gray-100 text-gray-700 placeholder-gray-700 rounded-full p-2 focus:outline-none" placeholder="Enter metacritic" style="background-color: rgba(206, 206, 206, 0.6);">
         </div>
 
             <button type="submit" class="w-full bg-gray-200 bg-opacity-80 text-black border px-4 py-2 rounded-full hover:bg-gray-500 transition duration-300 ease-in-out">Add Film</button>
@@ -55,5 +61,6 @@
         <p>&copy; 2024 Gerard Moreno Campos.</p>
     </div>
 </footer>
+
 </body>
 </html>

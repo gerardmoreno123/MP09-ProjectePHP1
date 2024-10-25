@@ -37,54 +37,60 @@ class Route
             return $controllerInstance->index();
         }
 
-        // CRUD Films (Pàgina secundària)
+        // CRUD Films i Games
         if ($parts[0] === 'films') {
             $controller = 'App\Controllers\FilmController';
             require '../App/Controllers/FilmController.php';
-            $controllerInstance = new $controller();
+        } elseif ($parts[0] === 'games') {
+            $controller = 'App\Controllers\GameController';
+            require '../App/Controllers/GameController.php';
+        } else {
+            return require '../resources/views/errors/404.blade.php';
+        }
 
-            // Index (listar films)
-            if (!isset($parts[1])) {
-                return $controllerInstance->index();
-            }
+        $controllerInstance = new $controller();
 
-            // Create
-            if ($parts[1] === 'create') {
-                return $controllerInstance->create();
-            }
+        // Index (listar films)
+        if (!isset($parts[1])) {
+            return $controllerInstance->index();
+        }
 
-            // Guardar (Store)
-            if ($parts[1] === 'store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                $data = $_POST;
-                return $controllerInstance->store($data);
-            }
+        // Create
+        if ($parts[1] === 'create') {
+            return $controllerInstance->create();
+        }
 
-            // Delete (GET)
-            if ($parts[1] === 'delete' && isset($parts[2])) {
-                return $controllerInstance->delete($parts[2]);
-            }
+        // Guardar (Store)
+        if ($parts[1] === 'store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = $_POST;
+            return $controllerInstance->store($data);
+        }
 
-            // Destroy (POST)
-            if ($parts[1] === 'destroy' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                if (!isset($_POST['id'])) {
-                    throw new RuntimeException('No id provided');
-                }
-                return $controllerInstance->destroy($_POST['id']);
-            }
+        // Delete (GET)
+        if ($parts[1] === 'delete' && isset($parts[2])) {
+            return $controllerInstance->delete($parts[2]);
+        }
 
-            // Editar (GET)
-            if ($parts[1] === 'edit' && isset($parts[2])) {
-                return $controllerInstance->edit($parts[2]);
+        // Destroy (POST)
+        if ($parts[1] === 'destroy' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['id'])) {
+                throw new RuntimeException('No id provided');
             }
+            return $controllerInstance->destroy($_POST['id']);
+        }
 
-            // Actualitzar (POST)
-            if ($parts[1] === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                $data = $_POST;
-                if (!isset($_POST['id'])) {
-                    throw new RuntimeException('No id provided');
-                }
-                return $controllerInstance->update($_POST['id'], $data);
+        // Editar (GET)
+        if ($parts[1] === 'edit' && isset($parts[2])) {
+            return $controllerInstance->edit($parts[2]);
+        }
+
+        // Actualitzar (POST)
+        if ($parts[1] === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = $_POST;
+            if (!isset($_POST['id'])) {
+                throw new RuntimeException('No id provided');
             }
+            return $controllerInstance->update($_POST['id'], $data);
         }
 
         // Si no es troba cap ruta, carregar 404

@@ -1,8 +1,35 @@
-/* Estils personalitzats per al mode fosc */
-body.dark-mode {
-    background-color: #1a1a1a; /* Color de fons fosc */
-    color: #ffffff; /* Color del text clar */
+/* CSS adicional para los cortes diagonales */
+.clip-left {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
 }
-.dark-mode .bg-white {
-    background-color: #2a2a2a; /* Color de fons per als panells */
+
+.clip-right {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.home-bg {
+    background-image: url('../assets/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+}
+
+.films-bg {
+    background-image: url('../assets/movies-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+}
+
+.games-bg {
+    background-image: url('../assets/games-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+}
+
+.blurred-section {
+    background: rgba(226, 226, 226, 0.4); /* Fondo translúcido */
+    backdrop-filter: blur(12px); /* Efecto blur fuerte */
+    padding: 20px;
 }

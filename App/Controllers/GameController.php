@@ -2,33 +2,33 @@
 
 namespace App\Controllers;
 
-use App\Models\Film;
+use App\Models\Game;
 
-class FilmController
+class GameController
 {
     //funcio index
     public function index()
     {
         //obtenim totes les pelis
-        $films = Film::getAll();
+        $games = Game::getAll();
 
         //pasem les pelis a la vista
-        return view('films/index', ['films' => $films]);
+        return view('games/index', ['games' => $games]);
     }
 
     //funcio per anar a la vista create
     public function create()
     {
-        return view('films/create');
+        return view('games/create');
     }
 
     //funcio per guardar les dades i tornar a la vista principal
     public function store($data)
     {
         //cridem funcio create del model
-        Film::create($data);
+        Game::create($data);
         //retornar a la vista principal
-        header('location: /films');
+        header('location: /games');
         exit;
     }
 
@@ -37,30 +37,28 @@ class FilmController
     {
         //si no ens passen la id fem redirect
         if ($id === null) {
-            header('location: /films');
+            header('location: /games');
             exit;
         }
 
-        //busquem la peli
-        $film = Film::find($id);
+        $game = Game::find($id);
 
-        //si no ens passen cap peli mostrar 404
-        if (!$film) {
+        if (!$game) {
             require '../../resources/views/errors/404.blade.php';
         }
 
-        //retornem la vista i li passem la peli indicada
-        return view('films.edit', ['film' => $film]);
+        //retornem la vista i li passem el joc indicada
+        return view('games.edit', ['game' => $game]);
     }
 
-    //funcio update per a modificar la peli a la base de dades
+    //funcio update per a modificar el joc a la base de dades
     public function update($id, $data)
     {
         //modifiquem
-        Film::update($id, $data);
+        Game::update($id, $data);
 
         //retonem a la pàgina principal
-        header('location: /films');
+        header('location: /games');
         exit;
     }
 
@@ -69,25 +67,25 @@ class FilmController
     {
         //si no ens passen la id fem redirect
         if ($id === null) {
-            header('location: /films');
+            header('location: /games');
             exit;
         }
 
-        //busquem la peli
-        $film = Film::find($id);
+        //busquem el joc
+        $game = Game::find($id);
         //retornem la vista en la peli
-        return view('films/delete', ['film' => $film]);
+        return view('games/delete', ['game' => $game]);
 
     }
 
-    //funcio per eliminar la peli de la base de dades
+    //funcio per eliminar el joc de la base de dades
     public function destroy($id)
     {
         //utilizem la funcio delete del model
-        Film::delete($id);
+        Game::delete($id);
 
         //retornar a la vista
-        header('location: /films');
+        header('location: /games');
     }
 
 }

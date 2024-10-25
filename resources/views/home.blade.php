@@ -3,45 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Mi Aplicación</title>
+    <title>Landing Page - Mi Aplicació</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
-<nav class="bg-green-600 p-4 shadow-md">
+<body class="bg-gray-100 flex flex-col min-h-screen home-bg">
+
+<!-- Navegació -->
+<nav class="blurred-section p-4">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <div class="text-white text-lg font-bold">Projecte PHP 1</div>
+        <div class="text-gray-900 text-lg font-bold">Projecte PHP 1</div>
         <div class="nav-links space-x-4 flex items-center">
-            <a href="/" class="text-white hover:text-green-200">Home</a>
-            <a href="/films" class="text-white hover:text-green-200">Pel·lícules</a>
-            <a href="/music" class="text-white hover:text-green-200">Música</a>
+            <a href="/" class="text-gray-900 hover:text-gray-600">Home</a>
+            <a href="/films" class="text-gray-900 hover:text-gray-600">Pel·lícules</a>
+            <a href="/games" class="text-gray-900 hover:text-gray-600">Jocs</a>
         </div>
     </div>
 </nav>
 
+<!-- Secció Hero -->
+<div class="blurred-section bg-gray -200 text-gray-900 border-b">
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl font-bold mb-4">Benvingut</h1>
+        <p class="text-lg mb-6">Descobreix, gestiona i gaudeix d'una àmplia gamma de pel·lícules i jocs en un sol lloc.</p>
+        <p class="text-md mb-6">El teu portal per a l'entreteniment: amb les nostres eines, podràs gestionar fàcilment el teu catàleg de pel·lícules i jocs preferits. Explora les últimes novetats, compara valoracions i crea una col·lecció personalitzada que reflecteixi els teus gustos.</p>
+    </div>
+</div>
+
 <div class="max-w-4xl mx-auto mt-6 space-y-6">
-    <section class="bg-white shadow-md rounded-lg p-6">
-        <h1 class="text-4xl font-bold mb-4">Benvingut a Mi Aplicació</h1>
-        <p class="text-lg mb-4">Descobreix una àmplia gamma de pel·lícules i música interessants.</p>
-        <p class="text-lg mb-4">Navega per la nostra col·lecció i gestiona el teu contingut fàcilment.</p>
+    <!-- Secció de CRUD de Pel·lícules -->
+    <section class="blurred-section shadow-md rounded-lg p-6 border">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Gestió de Pel·lícules</h2>
+        <p class="text-lg mb-4">A la secció de pel·lícules, podràs gestionar el teu catàleg de pel·lícules favorites. Crea, actualitza i elimina pel·lícules fàcilment.</p>
+        <p class="text-lg mb-4">Consulta els detalls de cadascuna d'elles i explora els gèneres i les valoracions.</p>
+        <a href="/films" class="border w-full bg-gray-200 bg-opacity-80 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">Accedir a Pel·lícules</a>
     </section>
 
-    <section class="bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-3xl font-bold mb-4">Pel·lícules</h2>
-        <p class="text-lg mb-4">A la secció de pel·lícules, podràs gestionar el teu catàleg de pel·lícules favorites. Crea, actualitza i elimina pel·lícules fàcilment, i consulta els detalls de cadascuna d'elles.</p>
-        <p class="text-lg mb-4">Explora els gèneres, les valoracions i les opinions dels usuaris per trobar la pel·lícula perfecta per a cada ocasió.</p>
-    </section>
-
-    <section class="bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-3xl font-bold mb-4">Música</h2>
-        <p class="text-lg mb-4">A la secció de música, podràs gestionar la teva biblioteca musical. Crea, actualitza i elimina cançons i àlbums, i consulta els detalls de cada tema musical.</p>
-        <p class="text-lg mb-4">Descobreix nous artistes, gèneres i àlbums recomanats per enriquir la teva experiència musical.</p>
+    <!-- Secció de CRUD de Jocs -->
+    <section class="blurred-section shadow-md rounded-lg p-6 border">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Gestió de Jocs</h2>
+        <p class="text-lg mb-4">A la secció de jocs, podràs gestionar la teva col·lecció de jocs. Crea, actualitza i elimina jocs, i consulta els detalls de cadascun.</p>
+        <p class="text-lg mb-4">Descobreix nous títols i explora els gèneres disponibles.</p>
+        <a href="/games" class="border w-full bg-gray-200 bg-opacity-80 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">Accedir a Jocs</a>
     </section>
 </div>
 
-<footer class="mt-auto bg-gray-800 text-white py-4">
+<!-- Footer -->
+<footer class="blurred-section mt-auto bg-gray-100 text-gray-900 py-4 border-t">
     <div class="max-w-4xl mx-auto text-center">
-        <p>&copy; 2024 Mi Aplicación. Tots els drets reservats.</p>
+        <p>&copy; 2024 Mi Aplicació. Tots els drets reservats.</p>
     </div>
 </footer>
 
